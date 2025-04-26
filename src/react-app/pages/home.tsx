@@ -3,6 +3,8 @@ import Scrolldown from "../components/scrolldown";
 import ThumbnailById from "../components/thumbnails";
 import Navtab from "../components/navtab";
 import Gridads from "../components/gridads";
+import "../styles/page.css";
+
 export default function Home() {
     const ads = [
         { title: "Adspace 1", description: "This is the first advertisement." },
@@ -42,7 +44,7 @@ export default function Home() {
     return (
         <>
         <Scrolldown/>
-            <section className="animate-pulse">
+            <section>
             <AdSpace ads={ads[0]} />
             <ThumbnailById id={"1"} />
             <Navtab />

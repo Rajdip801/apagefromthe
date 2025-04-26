@@ -1,3 +1,17 @@
+.centerizedcontainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;;
+    width: 100%; /* Full height of the viewport */
+}
+.nav{
+    height: 10vh;
+    width: 450px;
+    background-color: white; /* Default background color for light mode */
+
+
+}
 .nav-pills .nav-link.active {
     background-color: yellow !important; /* Change background color to yellow */
     color: black !important; /* Default text color for light mode */
@@ -9,6 +23,10 @@
 }
 
 /* Dark mode styles */
+[data-bs-theme="dark"] .nav {
+    background-color: rgb(26, 25, 25); /* Dark background color */
+}
+
 [data-bs-theme="dark"] .nav-pills .nav-link.active {
     background-color: yellow !important; /* Keep background yellow */
     color: black !important; /* Change text color to white in dark mode */

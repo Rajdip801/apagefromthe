@@ -14,3 +14,19 @@
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
 }
+
+[data-bs-theme="dark"] .navbar{
+    background-color: black;
+    color: white;
+}
+[data-bs-theme="dark"] .details p{
+    color: white;
+}
+[data-bs-theme="dark"] .nav-pills{
+    background-color: black;
+    color: white;
+}
+[data-bs-theme="dark"] .nav-pills .nav-link.active{
+    background-color: rgb(255, 230, 0);
+    color: black;
+}
