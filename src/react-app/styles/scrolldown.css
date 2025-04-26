@@ -1,0 +1,59 @@
+@keyframes bling {
+  0% { background-color: red; }
+  25% { background-color: blue; }
+  50% { background-color: green; }
+  75% { background-color: yellow; }
+  100% { background-color: red; }
+}
+
+@keyframes slideLeft {
+  0% {
+      transform: translateX(100%);
+      opacity: 0;
+  }
+  100% {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+
+.slide-left {
+  animation: slideLeft 1s ease-out;
+}
+
+.scrolldown{
+  height: 10vh;
+  width: 20%;
+  background-color: black;
+  opacity: 50%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  position: fixed;
+  bottom: 20px;
+  right: 0;
+  animation: left 1s ease-in, bling 2s infinite;
+}
+.scrolldown span{
+  color: aliceblue;
+  mix-blend-mode: difference;
+  font-size: 2vh;
+}
+
+@media (max-width: 768px){
+  .scrolldown{
+      height: 10vh;
+      width: 50%;
+      background-color: black;
+      opacity: 50%;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      position: fixed;
+      bottom: 20px;
+      right: 0;
+  }
+  .scrolldown span{
+      font-size: 1.5vh;
+  }
+}

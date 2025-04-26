@@ -1,0 +1,35 @@
+.gridadsection {
+    height: 600px;
+    width: 100%;
+    margin-top: 2%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.gridad {
+    height: 500px;
+    width: 600px;
+    background-color: black;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* Three equal columns */
+    gap: 0;
+    /* No gap between grid items */
+}
+
+.gridad .space-1 {
+    height: 100%;
+    /* Adjust height to fit the grid cell */
+    width: 100%;
+    /* Adjust width to fit the grid cell */
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.space-1 span {
+    font-size: 30px;
+    color: aliceblue;
+}

@@ -1,0 +1,19 @@
+.nav-pills .nav-link.active {
+    background-color: yellow !important; /* Change background color to yellow */
+    color: black !important; /* Default text color for light mode */
+    text-decoration: none !important; /* Remove underline from active link */
+}
+
+.nav-pills .nav-link {
+    color: black !important; /* Ensure text color is black for all links */
+}
+
+/* Dark mode styles */
+[data-bs-theme="dark"] .nav-pills .nav-link.active {
+    background-color: yellow !important; /* Keep background yellow */
+    color: black !important; /* Change text color to white in dark mode */
+}
+
+[data-bs-theme="dark"] .nav-pills .nav-link {
+    color: white !important; /* Ensure text color is white for all links in dark mode */
+}
