@@ -1,6 +1,6 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-
+import "../styles/video.css"; // Import your CSS file for styling
 function VideoPage() {
   const { id } = useParams(); // Access the dynamic segment
   const navigate = useNavigate(); // React Router navigation hook
@@ -8,12 +8,13 @@ function VideoPage() {
     image_url: string;
     likes: number;
     views: number;
+    videos: string; // Add the missing 'videos' property
   }
 
   const [data, setData] = useState<VideoData | null>(null);
   const [loading, setLoading] = useState(true); // Explicit loading state
   const [error, setError] = useState<string | null>(null); // Error state
-  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "https://apagefromthephotographer.site"; // Fallback to localhost if env variable is not set
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost/API/Apagefromthephotographer"; // Fallback to localhost if env variable is not set
 
   useEffect(() => {
     const controller = new AbortController(); // Create an AbortController
@@ -72,11 +73,31 @@ function VideoPage() {
   return (
     <div>
       {data ? (
-        <div>
-          <img src={data.image_url} alt="Video Thumbnail" style={{ maxWidth: "100%" }} />
-          <p>Likes: {data.likes}</p>
-          <p>Views: {data.views}</p>
-        </div>
+        <div className="container">
+          <div className="video_container">
+            <iframe
+              src={data.videos}
+              title="Video Player"
+              frameBorder="0"
+              allowFullScreen
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              className="video_player"
+            ></iframe>
+              <div className="video_details">
+                <h2>Likes: {data.likes}</h2>
+                <h2>Views: {data.views}</h2>
+                <button
+                  className="like_button"
+                  onClick={() => {
+                    // Handle like button click
+                    console.log("Like button clicked");
+                  }}
+                >
+                  Like
+                </button>
+              </div>
+            </div>
+          </div>
       ) : (
         <p>No data available.</p>
       )}
